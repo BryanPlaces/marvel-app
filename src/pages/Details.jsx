@@ -8,15 +8,15 @@ const DetailsPage = () => {
   const { id } = useParams();
   const { character } = useCharacter({ id });
 
-  if (!character) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <>
-      <div className="character-header">
-        <CharacterDetailsComponent character={character} />
-      </div>
+      {!character ? (
+        <div>...Cargando</div>
+      ) : (
+        <div className="character-header">
+          <CharacterDetailsComponent character={character} />
+        </div>
+      )}
       <ComicsComponent />
     </>
   );
