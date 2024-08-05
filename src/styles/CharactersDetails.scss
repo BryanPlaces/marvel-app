@@ -1,0 +1,133 @@
+@import './variables';
+
+.character-header {
+  background-color: $black;
+  color: $white;
+  border-top: 1px solid $gray;
+  clip-path: polygon(0px 0px, 100% 0px, 100% 93%, 98% 100%, 0px 100%);
+
+  .character-resume {
+    max-width: $character-details-size;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    .character-img {
+      width: 320px;
+    }
+
+    .character-info {
+      display: flex;
+      flex-direction: column;
+      margin: 0 40px;
+    }
+
+    .character-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        width: $heart-size-lg;
+        height: $heart-size-lg;
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet-size) {
+  .character-header {
+    clip-path: polygon(0px 0px, 100% 0px, 100% 97%, 98% 100%, 0px 100%);
+  }
+
+  .character-resume {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: $mobile-size) {
+  .character-header {
+    clip-path: polygon(0px 0px, 100% 0px, 100% 97%, 95% 100%, 0px 100%);
+  }
+
+  .character-img {
+    width: 100% !important;
+  }
+}
+
+// comics
+.comics-wrapper{
+  max-width: $character-details-size;
+  display:block;
+  overflow:hidden;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.comics-container{
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  overflow-x: scroll;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+.comics-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.comics-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.comics-container::-webkit-scrollbar-thumb {
+  background: #ff0000;
+  border-radius: 10px;
+}
+
+.comics-container::-webkit-scrollbar-thumb:hover {
+  background: #cc0000;
+}
+
+.comics-container::-webkit-scrollbar-thumb:active {
+  background: #990000;
+}
+
+.comic-card {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 180px;
+  margin: 0 10px;
+
+  img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+  }
+
+  .comic-title {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    white-space: normal;
+    padding: 10px 0;
+  }
+  .comic-date {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: $tablet-size) {
+  .comic-card {
+    width: 168px;
+  }
+}
+
+@media (max-width: $mobile-size) {
+  .comic-card {
+    width: 164px;
+  }
+}
