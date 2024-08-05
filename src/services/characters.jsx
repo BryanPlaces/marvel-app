@@ -5,7 +5,7 @@ import comicsMockData from '../mocks/characterComics.json';
 
 const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY;
 const PRIVATE_KEY = process.env.REACT_APP_PRIVATE_KEY;
-const BASE_URL = 'https://gateway.marvel.com:443/v1/public';
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 const USE_MOCK_DATA = process.env.REACT_APP_USE_MOCK_DATA;
 
 const getHash = () => {
